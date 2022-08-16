@@ -61,13 +61,13 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
         </div>
       </div>
 
-      <div className="lg:ml-20 flex gap-4">
+      <div className="lg:ml-20 flex gap-4 relative">
         <div
           className="roundex-3xl"
           onMouseEnter={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
         >
-          <Link href="">
+          <Link href={`/detail/${post._id}`}>
             <video
               src={post.video.asset.url}
               loop

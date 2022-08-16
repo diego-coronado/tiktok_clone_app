@@ -10,7 +10,6 @@ import Footer from "./Footer";
 
 const Sidebar = () => {
   const [showSidebar, setShowSidebar] = useState(true);
-  const userProfile = false;
   const normalLink =
     "flex items-center gap-3 hover:bg-primary p-3 xl:justify-start cursor-pointer font-semibold text-[#F51997] rounded";
 
