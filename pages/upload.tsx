@@ -7,6 +7,7 @@ import useAuthStore from "../store/authStore";
 import { client } from "../utils/client";
 import { SanityAssetDocument } from "@sanity/client";
 import { topics } from "../utils/constants";
+import { BASE_URL } from "../utils";
 
 const Upload = () => {
   const { userProfile }: { userProfile: any } = useAuthStore();
@@ -61,10 +62,7 @@ const Upload = () => {
         topic: category,
       };
 
-      await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/post`,
-        document
-      );
+      await axios.post(`${BASE_URL}/api/post`, document);
       router.push("/");
     }
   };
@@ -170,7 +168,7 @@ const Upload = () => {
               type="button"
               className="bg-[#F51997] text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none"
             >
-              Post
+              {savingPost ? 'Posting...' : 'Post'}
             </button>
           </div>
         </div>
